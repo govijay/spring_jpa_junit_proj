@@ -11,4 +11,12 @@ public interface FlightRepository<T,Long extends Serializable> extends JpaReposi
 
 
   List<Flight> findByOrigin(String origin);
+
+  List<Flight> findByOriginAndDestination(String origin, String destination);
+
+  List<Flight> findByOriginOrDestination(String origin, String destination);
+
+  List<Flight> findByOriginIn(String ... origins);
+
+  List<Flight> findByOriginIgnoreCase(String origin);
 }
